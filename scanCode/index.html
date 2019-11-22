@@ -1,11 +1,24 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>QR Code Scan</title>
-    </head>
-    <body>
-        <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
-        <script src="liff.js"></script>
-    </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My LIFF App</title>
+</head>
+<body>
+  <p id="scanCode"></p>
+  <p>
+    <button id="btnScanCode" onclick="scanCode();">Scan Code</button>
+  </p>
+  <script src="https://static.line-scdn.net/liff/edge/2.1/liff.js"></script>
+  <script>
+    function scanCode() {
+      liff.scanCode().then(result => {
+        const stringifiedResult = JSON.stringify(result);
+        alert(stringifiedResult);
+        document.getElementById("scanCode").textContent = stringifiedResult;
+      });
+    }
+    liff.init({ liffId: "1653363278-djaoleWK" }, () => {}, err => console.error(err.code, error.message));
+  </script>
+</body>
 </html>
