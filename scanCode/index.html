@@ -3,66 +3,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QR Code Reader</title>
-  <style>
-    body{
-      background-color: steelblue;
-      color: bisque;
-    }
-    .container{
-      margin: auto auto;
-      vertical-align:middle;
-      text-align: center;
-      }
-    button{
-      background-color: cornflowerblue;
-      color: cornsilk;
-      border-radius: 0.1rem;
-      border: 0px;
-      width: 15%;
-      line-height: 1.8rem;
-      }
-    form{
-      align-self: left;
-      }
-    input{
-      width: 60%;
-      line-height: 1.5rem;
-    }
-    .actbtn{
-      width: 30%;
-      line-height: 2rem;
-    }
-  </style>
 </head>
 <body>
-  <div class="container">
-    <section>開通作業</section>
-    <form action="/" method="POST">
-      <div>
-          <p><input type="text" name="client" id="clientid"><button id="client" onclick="checkExist();">Check</button></p>
-          <p id="client_msg"></p>
-          <p><input type="text" id="machine"><button id="machine" onclick="scanCode();">Scan </button></p>
-          <p id="machine_msg"></p>
-          <p><input type="text" id="smartcard"><button id="smartcard" onclick="scanCode();">Scan </button></p>
-          <p id="smartcard_msg"></p>
-    </div>
-      <div class="row">
-          <button id="active" type="submit" class="actbtn col-4" onclick="active();">開通</button>
-          <button id="change"  type="submit" class="actbtn col-4" onclick="changeandActive();">換機</button>
-          <button id="inactive" type="submit" class="actbtn col-4" onclick="inactive();">拆機</button>
-      </div>    
-    </form>
-  </div>
+  <p id="scanCode"></p>
+  <p>
+    <button id="btnScanCode" onclick="scanCode();">Scan Code</button>
+  </p>
   <script src="https://static.line-scdn.net/liff/edge/2.1/liff.js"></script>
   <script>
     function scanCode() {
       liff.scanCode().then(result => {
-        const Result = JSON.parse(result).value;
-        document.querySelector("span #"+this.id).textContent = Result;
+        const stringifiedResult = JSON.stringify(result);
+        alert(stringifiedResult);
+        document.getElementById("scanCode").textContent = stringifiedResult;
       });
-    }
-    function checkExist() {
-      clientid = document.querySelector("span #"+this.id).textContent;
     }
     liff.init({ liffId: "1653363278-djaoleWK" }, () => {}, err => console.error(err.code, error.message));
   </script>
