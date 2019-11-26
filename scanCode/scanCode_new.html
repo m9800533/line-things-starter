@@ -1,0 +1,76 @@
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Code Reader</title>
+  <style>
+    body{
+      background-color: steelblue;
+      color: bisque;
+    }
+    .container{
+      margin: auto auto;
+      vertical-align:middle;
+      text-align: center;
+      }
+    button{
+      background-color: cornflowerblue;
+      color: cornsilk;
+      border-radius: 0.1rem;
+      border: 0px;
+      width: 15%;
+      line-height: 1.8rem;
+      }
+    form{
+      align-self: left;
+      }
+    input{
+      width: 60%;
+      line-height: 1.5rem;
+    }
+    .actbtn{
+      width: 30%;
+      line-height: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section>開通作業</section>
+    <form>
+      <div>
+          <p><input type="text" name="input_client" id="clientid"><button id="client" onclick="checkExist();">Check</button></p>
+          <p></p>
+          <p><input type="text" id="input_machine"><button id="machine" onclick="scanCode1();">Scan</button></p>
+          <p></p>
+          <p><input type="text" id="input_smartcard"><button id="smartcard" onclick="scanCode2();">Scan </button></p>
+          <p></p>
+    </div>
+    <div class="row">
+          <button id="active" type="submit" class="actbtn col-4" onclick="active();">開通</button>
+          <button id="change"  type="submit" class="actbtn col-4" onclick="changeandActive();">換機</button>
+          <button id="inactive" type="submit" class="actbtn col-4" onclick="inactive();">拆機</button>
+      </div>    
+    </form>
+  </div>
+  <script src="https://static.line-scdn.net/liff/edge/2.1/liff.js"></script>
+  <script>
+    function scanCode1() {
+      liff.scanCode().then(result => {
+        var Result = result.value;
+        document.getElementById("input_machine").value = Result;
+      });
+    }
+    function scanCode2() {
+      liff.scanCode().then(result => {
+        var Result = result.value;
+        document.getElementById("input_smartcard").value = Result;
+      });
+    }
+    function checkExist() {
+      clientid = document.getElementById("input_client").value;
+    }
+      liff.init({ liffId: "1626400776-jRMVDBgn" }, () => {}, err => console.error(err.code, error.message));
+    </script>
+</body>
+</html>
