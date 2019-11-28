@@ -1,5 +1,5 @@
 // User service UUID: Change this to your generated service UUID
-const USER_SERVICE_UUID         = '213a23ce-9ae0-49d7-96db-a09cf2fe5394'; // Lock, Button
+const USER_SERVICE_UUID         = '4a6e7693-c577-4408-aba1-63ef87e483c8'; // Lock, Button
 
 // User service characteristics
 const LOCK_CHARACTERISTIC_UUID   = 'E9062E71-9E62-4BC6-B0D3-35CDCD9B027B';
