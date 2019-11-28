@@ -14,12 +14,6 @@
       <img id="loading-animation" class="" src="loading.gif" height="14px" />
       <span id="status" class="inactive">Glass Front Door</span>
     </p>
-    <hr />
-    <div>
-        <ul display="none">
-            <li>psdi:<span id="device-psdi"></span></li>
-        </ul>
-    </div>
     <div id="controls" class="hidden">
       <!-- Device Info Table -->
       <table class="device-info-table">
@@ -29,12 +23,25 @@
             <th>TBD.</th>
         </thead>
         <tbody>
-            <td><button id="btn-lock-toggle" class="btn btn-lock-toggle" onclick="handlerToggleLock()">Lock</button></td>
+            <td><button id="btn-lock-toggle" class="btn btn-lock-toggle" onclick="handlerToggleLock()">unlock</button></td>
             <td><button id="btn-state" class="btn btn-state">Open</button></td>
-            <td><button id="btn-state" class="btn btn-state" disabled>TBD.</button></td>
+            <td><button id="btn-tbd" class="btn btn-tbd" disabled>TBD.</button></td>
         </tbody>
       </table>
       <hr />
     </div>
+    <hr />
+    <div>
+        <ul>
+            <li>psdi:<span id="device-psdi"></span></li>
+            <li>elStatus:<span id="status"></span></li>
+            <li>elControls:<span id="controls"></span></li>
+            <li>elLoading:<span id="loading-animation"></span></li>
+            <li>btn-state:<span id="btn-state"></span></li>
+            <li>btn-lock-toggle:<span id="btn-lock-toggle"></span></li>
+            <li>click-count:<span id="click-count"></span></li>
+        </ul>
+    </div>
+    <hr />
   </body>
 </html>
