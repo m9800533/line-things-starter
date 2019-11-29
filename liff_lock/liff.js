@@ -286,7 +286,7 @@ function liffToggleDeviceLockState(state) {
 }
 function liffToggleDeviceOpenState() {
     // open: 0x10
-    window.lockCharacteristic.writeValue(new Uint8Array([0x10])).catch(error => {
+    window.lockCharacteristic.writeValue(new Uint8Array([0x02])).catch(error => {
         uiStatusError(makeErrorMsg(error), false);
     });
 }
