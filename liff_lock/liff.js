@@ -49,7 +49,7 @@ function handlerToggleOpen(state) {
     const el = document.getElementById("btn-open-toggle");
     el.innerText = state ? "Open" : "Opening";
     el.classList.add("active");
-    liffToggleDeviceOpenState(state);
+    liffToggleDeviceOpenState();
     el.classList.remove("active");
     el.innerText = state ? "Opening" : "Open";
 }
@@ -225,11 +225,11 @@ function liffGetUserService(service) {
     //     uiStatusError(makeErrorMsg(error), false);
     // });
     // Toggle Open
-    service.getCharacteristic(BTN_CHARACTERISTIC_UUID).then(characteristic => {
-        window.btncharacteristic = characteristic;
-    }).catch(error => {
-        uiStatusError(makeErrorMsg(error), false);
-    });
+    // service.getCharacteristic(BTN_CHARACTERISTIC_UUID).then(characteristic => {
+    //     window.btncharacteristic = characteristic;
+    // }).catch(error => {
+    //     uiStatusError(makeErrorMsg(error), false);
+    // });
     // Toggle Lock
     service.getCharacteristic(LOCK_CHARACTERISTIC_UUID).then(characteristic => {
         window.lockCharacteristic = characteristic;
@@ -284,9 +284,9 @@ function liffToggleDeviceLockState(state) {
         uiStatusError(makeErrorMsg(error), false);
     });
 }
-function liffToggleDeviceOpenState(state) {
+function liffToggleDeviceOpenState() {
     // open: 0x10
-    window.btnCharacteristic.writeValue(new Uint8Array([0x10])).catch(error => {
+    window.lockCharacteristic.writeValue(new Uint8Array([0x10])).catch(error => {
         uiStatusError(makeErrorMsg(error), false);
     });
 }
