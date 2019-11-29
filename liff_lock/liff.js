@@ -29,7 +29,7 @@ function handlerToggleLock() {
     lockState = !lockState;
 
     uiToggleLockButton(lockState);
-    liffToggleDeviceLedState(lockState);
+    liffToggleDeviceLockState(lockState);
 }
 
 // ------------ //
