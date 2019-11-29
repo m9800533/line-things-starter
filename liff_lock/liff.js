@@ -49,7 +49,7 @@ function handlerToggleOpen(state) {
     const el = document.getElementById("btn-open-toggle");
     el.innerText = state ? "Open" : "Opening";
     el.classList.add("active");
-    liffToggleDeviceOpenState(state)
+    liffToggleDeviceOpenState(state);
     el.classList.remove("active");
     el.innerText = state ? "Opening" : "Open";
 }
