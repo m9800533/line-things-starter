@@ -248,7 +248,7 @@ function liffGetPSDIService(service) {
         // Byte array to hex string
         const psdi = new Uint8Array(value.buffer)
             .reduce((output, byte) => output + ("0" + byte.toString(16)).slice(-2), "");
-        alert(psdi);
+        // alert(psdi);
         document.getElementById("device-psdi").innerText = psdi;
     }).catch(error => {
         uiStatusError(makeErrorMsg(error), false);
