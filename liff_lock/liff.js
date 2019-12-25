@@ -25,8 +25,8 @@ function uiToggleLockButton(state) {
     liffToggleDeviceLockState(el.checked);
 }
 function uiTogglekeepOpenButton(state) {
-    const el = document.getElementById("keepOpen");
-    liffToggleDevicekeepOpenState(el.checked);
+    const elkeepopen = document.getElementById("keepOpen");
+    liffToggleDevicekeepOpenState(elkeepopen.checked);
 }
 
 
