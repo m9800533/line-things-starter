@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/7d5329d481.js"></script>
+    <script src=" https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+    <script src="./liff.js"></script>
+    <link rel="stylesheet" type="text/css" href="./liff.css" />
+  </head>
+  <body class="bg-dark text-white">
+    <h2 id="device-name"></h2>
+    <hr />
+    <p>
+      <img id="loading-animation" class="" src="loading.gif" height="14px" />
+      <span id="status" class="inactive"></span>
+    </p>
+    <div id="controls" class="hidden">
+      <!-- Device Info Table -->
+      <div class="bg-dark text-white">
+        <div class="row">
+          <div class="col-1">&nbsp;</div><div class="col-4">鎖定</div><div class="col-1"></div><div class="col-2">解鎖</div><div class="col-2"><label class="switch"><input type="checkbox" id="lock" onclick="uiToggleLockButton()"><span class="slider round"></span></label></div><div class="col-2">鎖定</div>
+        </div>
+        <div class="row">
+          <div class="col-1">&nbsp;</div><div class="col-4">一鍵開門</div><div class="col-3"></div><div class="col-3"><button class="btn-success" id="short" onclick="liffToggleDeviceOpenState()">OPEN</button></div>
+        </div>
+        <div class="row">
+          <div class="col-1">&nbsp;</div><div class="col-4">延長開門</div><div class="col-3"></div><div class="col-3"><button class="btn-warning" id="long" onclick="liffToggleDeviceOpenState_long()">OPEN</button></div>
+        </div>
+        <div class="row">
+          <div class="col-1">&nbsp;</div><div class="col-4">長開|關</div><div class="col-1"></div><div class="col-2">關</div><div class="col-2"><label class="switch"><input type="checkbox" id="keepOpen" onclick="uiTogglekeepOpenButton()"><span class="slider round"></span></label></div><div class="col-1">開</div>
+        </div>
+      </div>
+      <hr />
+    </div>
+  </body>
+</html>
