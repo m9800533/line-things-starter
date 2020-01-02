@@ -57,7 +57,7 @@ function uiToggleDeviceConnected(connected) {
 
     if (connected) {
         // Hide loading animation
-        uiToggleLoadingAnimation(false);
+        // uiToggleLoadingAnimation(false);
         // Show status connected
         elStatus.classList.remove("inactive");
         elStatus.classList.add("success");
@@ -66,7 +66,7 @@ function uiToggleDeviceConnected(connected) {
         elControls.classList.remove("hidden");
     } else {
         // Show loading animation
-        uiToggleLoadingAnimation(true);
+        // uiToggleLoadingAnimation(true);
         // Show status disconnected
         elStatus.classList.remove("success");
         elStatus.classList.add("inactive");
@@ -89,7 +89,7 @@ function uiToggleLoadingAnimation(isLoading) {
 }
 
 function uiStatusError(message, showLoadingAnimation) {
-    uiToggleLoadingAnimation(showLoadingAnimation);
+    // uiToggleLoadingAnimation(showLoadingAnimation);
 
     const elStatus = document.getElementById("status");
     const elControls = document.getElementById("controls");
