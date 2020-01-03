@@ -269,7 +269,8 @@ function liffToggleDeviceOpenState() {
 }
 function liffToggleDeviceOpenState_long() {
     // open: 0x11
-    console.log(3);
+    // console.log(3);
+    document.getElementById('lock').checked = false;
     window.lockCharacteristic.writeValue(new Uint8Array([3])).catch(error => {
         uiStatusError(makeErrorMsg(error), false);
     });
